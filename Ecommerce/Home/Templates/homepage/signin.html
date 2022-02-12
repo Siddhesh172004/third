@@ -5,6 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    {% comment %} Navbar links  starts {% endcomment %}
+      <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% comment %} Navbar links ends {% endcomment %}
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/login-cart-product.css' %}">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -12,7 +20,7 @@
 </head>
 
 <body>
-    <header>
+    {% comment %} <header>
         <div class="header-container">
             <a href="index.html">
                 <div class="logo-container">
@@ -44,7 +52,35 @@
             <li><a href="contact.html" class="link">Contact</a></li>
             <li><a href="login.html" class="link">Login</a></li>
         </ul>
-    </header>
+    </header> {% endcomment %}
+
+    
+<!-- header section starts -->
+
+    
+<header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo">nike</a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#products">products</a>
+        <a href="#featured">featured</a>
+        <a href="#review">review</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
     <main>
         <div class="container">
             <div class="row">
