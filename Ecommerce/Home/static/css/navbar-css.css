@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+header{
+    font-family: 'Nunito', sans-serif;
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    background:#fff;
+    padding:.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    text-transform: capitalize;
+  }
+  
+  header .logo{
+    font-size: 2rem;
+    color:var(--black);
+  }
+  
+  header .navbar_new a{
+    font-size: 1.2rem;
+    color:var(--black);
+    margin:0 1rem;
+  }
+  
+  header .navbar_new a:hover{
+    color:var(--orange);
+  }
+  
+  header .icons a{
+    font-size: 1.5rem;
+    color:var(--black);
+    margin-left:1.1rem;
+  }
+  
+  header .icons a:hover{
+    color:var(--orange);
+  }
+  
+  #menu-bar{
+    font-size: 2.5rem;
+    padding: .5rem 1.5rem;
+    border:.1rem solid var(--black);
+    color:var(--black);
+    border-radius: .3rem;
+    cursor: pointer;
+    display: none;
+  }
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+      font-size: 60%;
+    }
+  
+    header{
+      padding:2rem;
+    }
+  
+    section{
+      padding:2rem;
+    }
+  
+  }
+  
+  @media (max-width:768px){
+  
+    #menu-bar{
+      display: block;
+    }
+  
+    header .navbar_new{
+      position: absolute;
+      top:100%; left:-120%;
+      width:100%;
+      background:#eee;
+      border-top: .1rem solid rgba(0,0,0,.1);
+    }
+  
+    header .navbar_new.active{
+      left:0;
+    }
+  
+    header .navbar_new a{
+      font-size: 2rem;
+      background:#fff;
+      border:.1rem solid var(--black);
+      border-radius: .5rem;
+      padding:1.5rem;
+      margin:1.5rem;
+      display: block;
+      text-align: center;
+    }
+  }  
+
+  @media (max-width:400px){
+
+    html{
+      font-size: 50%;
+    }
+  }  
