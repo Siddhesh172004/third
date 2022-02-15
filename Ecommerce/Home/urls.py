@@ -10,7 +10,7 @@ urlpatterns = [
     path('signin/',views.Signin),
     path('kids/',views.Kids),
     path('contact/',views.ContactUs)
-   
+    
   
 ]
 
