@@ -10,11 +10,40 @@
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    {% comment %} <!-- custom css file link  -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endcomment %}
+ <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/navbar-css.css' %}">
 
 </head>
 <body>
+
+
+<!-- header section starts  -->
+
+<header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="" class="logo">nike</a>
+
+    <nav class="navbar_new">
+        <a href="">home</a>
+        <a href="/mens">mens</a>
+        <a href="/womens">womens</a>
+        <a href="/kids">kids</a>
+        <a href="/about">about</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+
 <!-- partial:index.partial.html -->
 <section class="section-products">
 		<div class="container">
@@ -176,5 +205,8 @@
 </section>
 <!-- partial -->
   
+<!-- custom js file link  -->
+<script src="{%static 'js/navbar-js.js'%}"></script>
+    
 </body>
 </html>
