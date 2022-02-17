@@ -6,9 +6,12 @@
   <title>CodePen - Popular Products Section Using HTML , CSS , Bootstrap</title>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css'>
 <link rel="stylesheet" href="{% static 'css/mens.css' %}">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	
 
  <!-- custom css file link  -->
     <link rel="stylesheet" href="{% static 'css/navbar-css.css' %}">
@@ -20,190 +23,314 @@
 <!-- header section starts  -->
 
 <header>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div id="menu-bar" class="fas fa-bars"></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Product Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
 
-    <a href="" class="logo">nike</a>
+<body>
+	<div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+                <ul class="action">
+                    <li>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <span>Add to wishlist</span>
+                    </li>
 
-    <nav class="navbar_new">
-        <a href="">home</a>
-        <a href="/mens">mens</a>
-        <a href="/womens">womens</a>
-        <a href="/kids">kids</a>
-        <a href="/about">about</a>
-    </nav>
+                    <li>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
 
-    <div class="icons">
-        <a href="#" class="fas fa-heart"></a>
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" class="fas fa-user"></a>
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa grey fa-star" aria-hidden="true"></i>
+            </div>
+        </div>
     </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
 
-</header>
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
 
-<!-- header section ends -->
- {% comment %} new siddhesh {% endcomment %}
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
 
-<!-- partial:index.partial.html -->
-<section class="section-products">
-		<div class="container">
-				<div class="row justify-content-center text-center">
-						<div class="col-md-8 col-lg-6">
-								<div class="header">
-										<h3>Featured Products</h3>
-										<h2>Mens Products</h2>
-								</div>
-						</div>
-				</div>
-				<div class="row">
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-1" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-2" class="single-product">
-										<div class="part-1">
-												<span class="discount">15% off</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-3" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-4" class="single-product">
-										<div class="part-1">
-												<span class="new">new</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-1" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-2" class="single-product">
-										<div class="part-1">
-												<span class="discount">15% off</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-3" class="single-product">
-										<div class="part-1">
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-old-price">$79.99</h4>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-						<!-- Single Product -->
-						<div class="col-md-6 col-lg-4 col-xl-3">
-								<div id="product-4" class="single-product">
-										<div class="part-1">
-												<span class="new">new</span>
-												<ul>
-														<li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-														<li><a href="#"><i class="fas fa-heart"></i></a></li>
-														<li><a href="#"><i class="fas fa-plus"></i></a></li>
-														<li><a href="#"><i class="fas fa-expand"></i></a></li>
-												</ul>
-										</div>
-										<div class="part-2">
-												<h3 class="product-title">Here Product Title</h3>
-												<h4 class="product-price">$49.99</h4>
-										</div>
-								</div>
-						</div>
-				</div>
-		</div>
-</section>
-<!-- partial -->
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star grey" aria-hidden="true"></i>
+                    <i class="fa fa-star grey" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star grey" aria-hidden="true"></i>
+                    <i class="fa fa-star grey" aria-hidden="true"></i>
+                    <i class="fa fa-star grey" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="card">
+        <div class="imgBx">
+            <img src="https://i.ibb.co/RjvTJY5/7.jpg" alt="" />
+            <ul class="action">
+                <li>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <span>Add to wishlist</span>
+                </li>
+
+                <li>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i
+              ><span>Add to cart</span>
+            </li>
+
+            <li>
+              <i class="fa fa-eye" aria-hidden="true"></i
+              ><span>View Details</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="content">
+          <div class="productName">Rayon a-line Dress</div>
+
+          <div class="price-rating">
+            <h2>$13.45</h2>
+            <div class="rating">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
   
 <!-- custom js file link  -->
 <script src="{%static 'js/navbar-js.js'%}"></script>

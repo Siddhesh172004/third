@@ -1,6 +1,9 @@
 from urllib import request
 from django.shortcuts import render
 
+from django.http import HttpResponse
+from . models import Mens
+
 # Create your views here.
 def Home1(request):
     return render(request,"homepage/index.html")
@@ -32,6 +35,11 @@ def ContactUs(request):
     return render(request,"homepage/contact.html")
 
 
-
+def List(request):
+    params = {
+        "list" : [1,2,3,4,5,6,7]
+    }
+    
+    return render(request,"homepage\Mens.html",params)
 
     
