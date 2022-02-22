@@ -4,6 +4,8 @@ from django.http.response import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login ,logout
+
+from . models import Mens as mensboy
 # Create your views here.
 def Home1(request):
     return render(request,"homepage/index.html")
@@ -78,9 +80,31 @@ def Logindo(request):
 
 
 def Mens(request):
-
+    Mens_products=mensboy.objects.all()
+    params = {
+        "data":Mens_products
+    }
     
-    return render(request,"homepage/mens.html")
+    
+    return render(request,"homepage/mens.html",params)
+
+
+
+
+
+def Detail(request,id):
+    # name = request.GET.get("id")
+
+    try:
+        params = {"data":mensboy.objects.get(mens_id=id),"error":"null"}
+    except:
+        params = {"data":{},"error":"Product not found"}
+
+    return render(request,"homepage\singlecourse.html", params)
+
+
+
+
 
 
 def Womens(request):
@@ -88,6 +112,7 @@ def Womens(request):
 
 def Cart(request):
     return render(request,"homepage/cart.html")
+
 
 
 

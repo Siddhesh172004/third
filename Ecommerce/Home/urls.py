@@ -8,6 +8,9 @@ urlpatterns = [
     path('cart/',views.Cart),
     path('kids/',views.Kids),
     path('contact/',views.ContactUs),
+    path('mens/detail/<int:id>',views.Detail),
+
+    
 
     path('signin/',views.Signin),
     path('login/',views.Login),

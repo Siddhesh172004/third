@@ -1,154 +1,258 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
     font-family: "Poppins", sans-serif;
+    color: #444444;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section-products {
+    padding: 80px 0 54px;
+}
+
+.section-products .header {
+    margin-bottom: 50px;
+}
+
+.section-products .header h3 {
+    font-size: 1rem;
+    color: #fe302f;
+    font-weight: 500;
+}
+
+.section-products .header h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444444; 
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    background: #dcdcdc;
+  background-color: #f0f0f0;
+  font-family: Lato, sans-serif;
 }
 
-.container {
-    position: relative;
-    width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-    padding: 20px;
+h1.page-title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  color: #485a64;
+  font-weight: bold;
 }
 
-.container .card {
-    width: 100%;
-    background: #fff;
+.product-container {
+  background-color: #fff;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-.container .card .imgBx {
-    position: relative;
-    width: 100%;
-    height: 310px;
-    overflow: hidden;
+.tag-sale {
+  background-color: #4fdaa4;
+  width: 86px;
+  height: 98px;
+  position: absolute;
+  color: #fff;
+  right: -41px;
+  z-index: 9;
+  top: -44px;
+  transform: rotate(137deg);
 }
 
-.container .card .imgBx img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s ease-in-out;
-    transform-origin: right;
+.tag-sale::before {
+  content: "SALE";
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transform-origin: top center;
+  transform: rotate(222.5deg) translateX(-28px) translateY(-37px);
 }
 
-.container .card:hover .imgBx img {
-    transform: scale(1.5);
+.product-description {
+  background-color: #F7F7F7;
+  border-top: 1px solid #EFEFEF;
+  padding: 10px 20px;
+  color: #202020;
+  font-size:1rem;
 }
 
-.container .card .content {
-    padding: 10px;
+.product-image {
+  padding: 20px;
+  height: 323px;
+  position: relative;
+  overflow: hidden;
+  transition: 1s;
 }
 
-.container .card .content .productName h3 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    margin: 5px 0;
+.product-link {
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  color: #000000;
+  border-radius: 50%;
+  font-size: 25px;
+  text-align: center;
+  padding: 22px 0;
+  line-height: 25px;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  opacity: 0;
+  transition: 1s;
+  font-style: italic;
 }
 
-.container .card .content .price-rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.product-link:hover {
+  text-decoration: none;
+  color: #2d97d4;
 }
 
-.container .card .content .price-rating h2 {
-    font-size: 20px;
-    color: #ff2020;
-    font-weight: 500;
+
+.hover-link {
+  background-color: #2d97d4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
 }
 
-.container .card .content .price-rating .fa {
-    color: #ffd513;
-    cursor: pointer;
+.product-image img {
+  width: 100%;
 }
 
-.container .card .content .price-rating .fa.grey {
-    color: #ccc;
+.product-description h1 {
+  font-size: 19px;
+  margin-bottom: 5px;
+  margin-top: 0;
+  display: inline-block;
+  width: 76%;
 }
 
-.action {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.product-description p {
+  color: #5c5c5c;
 }
 
-.action li {
-    position: relative;
-    list-style: none;
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4px;
-    cursor: pointer;
-    transition: 0.5s;
-    transform: translateX(60px);
+.product-description .price {
+  display: inline-block;
+  width: 20%;
+  font-size: 23px;
+  text-align: right;
+  font-weight: bold;
+  color: #2d97d4;
+  margin-bottom: 5px;
 }
 
-.action li:nth-child(2) {
-    transition-delay: 0.15s;
+.product-option {
+  border-top: 1px solid #D2D2D2;
 }
 
-.action li:nth-child(3) {
-    transition-delay: 0.3s;
+.product-option h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
 
-.action li span {
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%) translateX(-20px);
-    white-space: nowrap;
-    padding: 4px 6px;
-    background: #fff;
-    color: #333;
-    font-weight: 500;
-    font-size: 12px;
-    border-radius: 4px;
-    pointer-events: none;
-    opacity: 0;
-    transition: 0.5s;
+.product-option .product-color ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.action li:hover span {
-    transform: translateY(-50%) translateX(0px);
-    opacity: 1;
+.product-option .product-color li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
 }
 
-.action li span::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -4px;
-    width: 8px;
-    height: 8px;
-    background: #fff;
-    transform: translateY(-50%) rotate(45deg);
+.product-color li.red {
+  background-color: #F75375;
+}
+.product-color li.blue {
+  background-color: #53A0F7;
+}
+.product-color li.green {
+  background-color: #59CFAF;
+}
+.product-color li.gray {
+  background-color: #C7C7C7;
+}
+.product-color li.black {
+  background-color: #4E5156;
+}
+.product-color li.dark-blue {
+  background-color: #2060AF;
 }
 
-.container .card:hover .action li {
-    transform: translateX(0px);
+.product-container:hover {
+  box-shadow: 0px 10px 25px -2px rgba(0,0,0,0.36);
 }
 
-.action li:hover {
-    background: #ff2020;
-    color: #fff;
+.product-container:hover .product-image {
+  height: 180px;
+  transition: 1s;
 }
+.product-container:hover .product-option {
+  display: block;
+}
+.product-container:hover .hover-link {
+  opacity: 0.5;
+}
+.product-container:hover .product-link {
+  opacity: 1;
+}
+
+.product-link:hover {
+  -webkit-animation: hovering 1000ms linear both;
+  animation: hovering 1000ms linear both;
+}
+
+@-webkit-keyframes hovering {
+  0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  2.3% { -webkit-transform: matrix3d(1.102, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.102, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.6% { -webkit-transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  7.41% { -webkit-transform: matrix3d(1.099, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.099, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  10.21% { -webkit-transform: matrix3d(1.023, 0, 0, 0, 0, 1.023, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.023, 0, 0, 0, 0, 1.023, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  13.01% { -webkit-transform: matrix3d(0.962, 0, 0, 0, 0, 0.962, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.962, 0, 0, 0, 0, 0.962, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  15.72% { -webkit-transform: matrix3d(0.942, 0, 0, 0, 0, 0.942, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.942, 0, 0, 0, 0, 0.942, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.52% { -webkit-transform: matrix3d(0.958, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.958, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  21.32% { -webkit-transform: matrix3d(0.99, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.12% { -webkit-transform: matrix3d(1.016, 0, 0, 0, 0, 1.016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.016, 0, 0, 0, 0, 1.016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  26.83% { -webkit-transform: matrix3d(1.025, 0, 0, 0, 0, 1.025, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.025, 0, 0, 0, 0, 1.025, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  32.43% { -webkit-transform: matrix3d(1.004, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.004, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  38.04% { -webkit-transform: matrix3d(0.989, 0, 0, 0, 0, 0.989, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.989, 0, 0, 0, 0, 0.989, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  49.15% { -webkit-transform: matrix3d(1.005, 0, 0, 0, 0, 1.005, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.005, 0, 0, 0, 0, 1.005, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  60.26% { -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  71.37% { -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  82.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  93.59% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@keyframes hovering {
+  0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  2.3% { -webkit-transform: matrix3d(1.102, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.102, 0, 0, 0, 0, 1.102, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.6% { -webkit-transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  7.41% { -webkit-transform: matrix3d(1.099, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.099, 0, 0, 0, 0, 1.099, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  10.21% { -webkit-transform: matrix3d(1.023, 0, 0, 0, 0, 1.023, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.023, 0, 0, 0, 0, 1.023, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  13.01% { -webkit-transform: matrix3d(0.962, 0, 0, 0, 0, 0.962, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.962, 0, 0, 0, 0, 0.962, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  15.72% { -webkit-transform: matrix3d(0.942, 0, 0, 0, 0, 0.942, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.942, 0, 0, 0, 0, 0.942, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.52% { -webkit-transform: matrix3d(0.958, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.958, 0, 0, 0, 0, 0.958, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  21.32% { -webkit-transform: matrix3d(0.99, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.99, 0, 0, 0, 0, 0.99, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.12% { -webkit-transform: matrix3d(1.016, 0, 0, 0, 0, 1.016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.016, 0, 0, 0, 0, 1.016, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  26.83% { -webkit-transform: matrix3d(1.025, 0, 0, 0, 0, 1.025, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.025, 0, 0, 0, 0, 1.025, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  32.43% { -webkit-transform: matrix3d(1.004, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.004, 0, 0, 0, 0, 1.004, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  38.04% { -webkit-transform: matrix3d(0.989, 0, 0, 0, 0, 0.989, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.989, 0, 0, 0, 0, 0.989, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  49.15% { -webkit-transform: matrix3d(1.005, 0, 0, 0, 0, 1.005, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.005, 0, 0, 0, 0, 1.005, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  60.26% { -webkit-transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(0.998, 0, 0, 0, 0, 0.998, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  71.37% { -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  82.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  93.59% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
