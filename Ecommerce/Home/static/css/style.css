@@ -20,6 +20,7 @@ html{
   overflow-x: hidden;
   scroll-padding-top:6rem;
   scroll-behavior: smooth;
+ 
 }
 
 section{
@@ -39,7 +40,7 @@ section{
   color:var(--orange);
 }
 
-.btn{
+/* .btn_cart{
   display: inline-block;
   margin-top: 1rem;
   border-radius: .5rem;
@@ -50,12 +51,12 @@ section{
   cursor: pointer;
   background:#fff;
   padding:.8rem 3rem;
-}
+} */
 
-.btn:hover{
+/* .btn:hover{
   background:var(--orange);
   color:#fff;
-}
+}  */
 
 header{
   position: fixed;
@@ -516,9 +517,9 @@ header .icons a:hover{
   margin-top: 1rem;
 }
 
-.newsletter .content form .btn{
+/* .newsletter .content form .btn{
   border-radius: 0;
-}
+} */
 
 .footer .box-container{
   border:.1rem solid rgba(0,0,0,.1);

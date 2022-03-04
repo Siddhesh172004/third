@@ -29,7 +29,7 @@ List
 						<div class="col-md-8 col-lg-6">
 								<div class="header">
 										<h3>Featured Products</h3>
-										<h2>Mens Products</h2>
+										<h2>Accessories Products</h2>
 								</div>
 						</div>
 				</div>
@@ -44,7 +44,7 @@ List
           </div> -->
           <div class="product-image">
             <span class="hover-link"></span>
-            <a href="/mens/detail/{{i.id}}" class="product-link">view details</a>
+            <a href="/accessories/detail/{{i.id}}" class="product-link">view details</a>
             <img class="img-responsive" src="/media/{{i.image}}" alt="">
           </div>
           <div class="product-description">
@@ -92,7 +92,7 @@ const add_to_cart =(id,name)=>{
 
   if (cart) {
     if (cart[id]) {
-      cart[id] = { name: name, value: cart[id].value + 1 };
+      cart[id+3000] = { name: name, value: cart[id].value + 1 };
 
     } else {
       cart[id] = { name: name, value: 1 };
@@ -101,6 +101,7 @@ const add_to_cart =(id,name)=>{
     cart = { [id]: { name: name, value: 1 } };
 
   }
+
 
 localStorage.setItem("cart",JSON.stringify(cart))
 

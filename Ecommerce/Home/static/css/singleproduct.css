@@ -253,7 +253,7 @@ main {
     justify-content: center;
 }
 
-.btn-login{
+.btn {
     background: #FFA20C;
     color: white;
     padding: 10px 20px;
@@ -264,7 +264,7 @@ main {
     outline: none;
 }
 
-.btn-login:hover {
+.btn:hover {
     background: white;
     border: 1px #FFA20C solid;
     color: #FFA20C;

@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login ,logout
 
 from . models import Mens as mensboy
+from . models import Womens as womensgirl
+from . models import Kids as kidschild
+from . models import Accessories as Accessories_productshai
 # Create your views here.
 def Home1(request):
     return render(request,"homepage/index.html")
@@ -89,35 +92,86 @@ def Mens(request):
     return render(request,"homepage/mens.html",params)
 
 
+def Womens(request):
+    Womens_products=womensgirl.objects.all()
+    params = {
+        "data":Womens_products
+    }
+    return render(request,"homepage/womens.html",params)
+    
+
+def Kids(request):
+    Kids_products=kidschild.objects.all()
+    params = {
+        "data":Kids_products
+    }
+    return render(request,"homepage/kids.html",params)
+
+
+def Accessories(request):
+    Accessories_products=Accessories_productshai.objects.all()
+    params = {
+        "data":Accessories_products
+    }
+    return render(request,"homepage/Accessories.html",params)
 
 
 
-def Detail(request,id):
+
+def Detail_mens(request,id):
     # name = request.GET.get("id")
 
     try:
-        params = {"data":mensboy.objects.get(mens_id=id),"error":"null"}
+        params = {"data":mensboy.objects.get(id=id),"error":"null"}
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\singlecourse.html", params)
+    return render(request,"homepage\singlecourse.html",params)
+
+def Detail_womens(request,id):
+    # name = request.GET.get("id")
+
+    try:
+        params = {"data":womensgirl.objects.get(id=id),"error":"null"}
+    except:
+        params = {"data":{},"error":"Product not found"}
+
+    return render(request,"homepage\singlecourse.html",params)
+
+def Detail_kids(request,id):
+    # name = request.GET.get("id")
+
+    try:
+        params = {"data":kidschild.objects.get(id=id),"error":"null"}
+    except:
+        params = {"data":{},"error":"Product not found"}
+
+    return render(request,"homepage\singlecourse.html",params)
+
+def Detail_accessories(request,id):
+    # name = request.GET.get("id")
+
+    try:
+        params = {"data":Accessories_productshai.objects.get(id=id),"error":"null"}
+    except:
+        params = {"data":{},"error":"Product not found"}
+
+    return render(request,"homepage\singlecourse.html",params)
+
+
+def Cartpage(request):
+    return render(request,"homepage/cart.html")
 
 
 
 
 
-
-def Womens(request):
-    return render(request,"homepage/womens.html")
 
 def Cart(request):
     return render(request,"homepage/cart.html")
 
 
 
-
-def Kids(request):
-    return render(request,"homepage/kids.html")
 
 
 def ContactUs(request):

@@ -7,8 +7,16 @@ urlpatterns = [
     path('womens/',views.Womens),
     path('cart/',views.Cart),
     path('kids/',views.Kids),
+    path('accessories/',views.Accessories),
     path('contact/',views.ContactUs),
-    path('mens/detail/<int:id>',views.Detail),
+    path('cartpage/',views.Cartpage),
+
+    # Details modul starts
+    path('mens/detail/<int:id>',views.Detail_mens),
+    path('womens/detail/<int:id>',views.Detail_womens),
+    path('kids/detail/<int:id>',views.Detail_kids),
+    path('accessories/detail/<int:id>',views.Detail_accessories),
+    # Details modul ends 
 
     
 
