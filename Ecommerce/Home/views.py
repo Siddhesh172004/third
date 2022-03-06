@@ -167,11 +167,6 @@ def Cartpage(request):
 
 
 
-def Cart(request):
-    return render(request,"homepage/cart.html")
-
-
-
 
 
 def ContactUs(request):
