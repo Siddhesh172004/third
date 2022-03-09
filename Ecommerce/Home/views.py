@@ -131,7 +131,8 @@ def Detail_mens(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\singlecourse.html",params)
+    return render(request,"homepage\details1.html",params)
+
 
 def Detail_womens(request,id):
     # name = request.GET.get("id")
@@ -141,7 +142,9 @@ def Detail_womens(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\singlecourse.html",params)
+    return render(request,"homepage\details1.html",params)
+
+    
 
 def Detail_kids(request,id):
     # name = request.GET.get("id")
@@ -151,7 +154,8 @@ def Detail_kids(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\singlecourse.html",params)
+    return render(request,"homepage\details1.html",params)
+    
 
 def Detail_accessories(request,id):
     # name = request.GET.get("id")
@@ -161,7 +165,8 @@ def Detail_accessories(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\singlecourse.html",params)
+    return render(request,"homepage\details1.html",params)
+
 
 
 def Cartpage(request):
