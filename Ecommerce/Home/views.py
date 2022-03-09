@@ -1,4 +1,5 @@
 from urllib import request
+import json
 from django.shortcuts import render,redirect
 from django.http.response import HttpResponse
 from django.contrib import messages
@@ -6,9 +7,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login ,logout
 
 from . models import Mens as mensboy
+
+from . models import Mens
 from . models import Womens as womensgirl
 from . models import Kids as kidschild
 from . models import Accessories as Accessories_productshai
+
+
 # Create your views here.
 def Home1(request):
     return render(request,"homepage/index.html")
@@ -164,6 +169,34 @@ def Cartpage(request):
 
 
 
+def Checkout(request):
+    str = request.POST.get("cartJson")
+    cart = json.loads(str)
+    currentCart = cart
+    print(currentCart)
+    
+    
+    
+    titalPrice = 0
+    for id in cart:
+        temp= cart[id]
+        tempOb = mensboy.objects.all(id=id)
+        price = tempOb.price
+        temp["price"]=price
+        temp["totalItemPrice"] = price * temp["value"]
+        totalPrice = totalPrice + temp["totalItemPrice"]
+        currentCart[id] = temp
+        
+        params = {
+            
+            totalPrice : totalPrice,
+            date: currentCart
+        } 
+        print("this is cart") 
+  
+
+    return render(request,"homepage/checkout.html")
+
 
 
 
@@ -171,6 +204,7 @@ def Cartpage(request):
 
 def ContactUs(request):
     return render(request,"homepage/contact.html")
+
 
 
 

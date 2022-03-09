@@ -1,3 +1,5 @@
+from django.db.models.base import Model, ModelBase
+
 from django.db import models
 
 # Create your models here.
