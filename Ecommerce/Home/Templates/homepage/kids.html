@@ -44,7 +44,7 @@ List
           </div> -->
           <div class="product-image">
             <span class="hover-link"></span>
-            <a href="/womens/detail/{{i.id}}" class="product-link">view details</a>
+            <a href="/kids/detail/{{i.id}}" class="product-link">view details</a>
             <img class="img-responsive" src="/media/{{i.image}}" alt="">
           </div>
           <div class="product-description">
@@ -86,20 +86,22 @@ List
 
 const add_to_cart =(id,name)=>{
 
-
   var cart = JSON.parse(localStorage.getItem("cart"))
 
+  id=id+200;
+ 
   if (cart) {
     if (cart[id]) {
-      cart[id+2000] = { name: name, value: cart[id].value + 1 };
+      cart[id] = { name: name, value: cart[id].value + 1 };
 
     } else {
       cart[id] = { name: name, value: 1 };
     }
   } else {
     cart = { [id]: { name: name, value: 1 } };
-
   }
+
+
 
 localStorage.setItem("cart",JSON.stringify(cart))
 
@@ -108,6 +110,7 @@ localStorage.setItem("cart",JSON.stringify(cart))
 var value = JSON.parse(localStorage.getItem("cart"));
 
 document.getElementById("cartId").innerHTML = Object.keys(value).length
+
 }
 
 

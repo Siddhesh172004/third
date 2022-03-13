@@ -99,14 +99,14 @@ span.custom-ar{
             </ul>
       </div>
       <div class="modal-footer">
-        <form action="/checkout/" method"POST">
+        <form action="/checkout/" method="post">
 	{% csrf_token %}
 	<input type="hidden" id="card-hidden" name="cartJson" >
 
 	<button
 	onclick="addHiddenVal()"
 											type="submit"
-											href=""
+											
 												
 												class="btn btn-success"
 												

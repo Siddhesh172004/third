@@ -90,17 +90,21 @@ const add_to_cart =(id,name)=>{
   var cart = JSON.parse(localStorage.getItem("cart"))
 
 
+
+
+   id=id+300;
+ 
   if (cart) {
     if (cart[id]) {
-      cart[id+3000] = { name: name, value: cart[id].value + 1 };
+      cart[id] = { name: name, value: cart[id].value + 1 };
 
     } else {
       cart[id] = { name: name, value: 1 };
     }
   } else {
     cart = { [id]: { name: name, value: 1 } };
-
   }
+
 
 
 localStorage.setItem("cart",JSON.stringify(cart))

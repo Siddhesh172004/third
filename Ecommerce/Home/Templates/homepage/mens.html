@@ -89,7 +89,7 @@ const add_to_cart =(id,name)=>{
 
   var cart = JSON.parse(localStorage.getItem("cart"))
 
-
+  
   if (cart) {
     if (cart[id]) {
       cart[id] = { name: name, value: cart[id].value + 1 };
@@ -109,6 +109,7 @@ localStorage.setItem("cart",JSON.stringify(cart))
 var value = JSON.parse(localStorage.getItem("cart"));
 
 document.getElementById("cartId").innerHTML = Object.keys(value).length
+
 }
 
 

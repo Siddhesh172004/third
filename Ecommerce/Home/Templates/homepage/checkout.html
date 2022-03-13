@@ -22,12 +22,16 @@ List
 
 
 <div class="container">
-    <div class="py-5 text-center">
+    {% comment %} <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h2>Checkout form</h2>
       <p class="lead">Your items are ready to checkout please fill this form.</p>
-    </div>
-
+    </div> {% endcomment %}
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="row">
      
       <div class="col-md-12 order-md-1">
@@ -112,14 +116,16 @@ List
           <hr class="mb-4">
           <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
           <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal11">
 
 
     Continue to checkout
   </button>
   
+<!-- Modal -->
+
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -130,37 +136,27 @@ List
          <div class="row">
              <div class="col-12">
                 <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-muted"> <span class="badge bg-secondary">Qty : 5 </span><span class="badge bg-secondary">Price : 5000 INR</span> </small>
-            </div>
-            <span class="text-muted">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between bg-light">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
-            </div>
-            <span class="text-success">−$5</span>
-          </li>
+
+                  {% for key,value in data.items %}
+
+                  <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div>
+                      <h6 class="my-0">{{value.name}}</h6>
+                      <small class="text-muted"> <span class="badge bg-secondary mx-2">Qty : {{value.value}} </span><span class="badge bg-secondary mx-2">Price : {{value.price}} INR</span> </small>
+                    </div>
+                    <span class="text-muted">{{value.totalItemPrice}} INR</span>
+                  </li>
+
+                    
+                  {% endfor %}
+
+        
+
+
+          
           <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
+            <span>Total (INR)</span>
+            <strong>{{totalPrice}}</strong>
           </li>
         </ul>
              </div>
@@ -168,11 +164,12 @@ List
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
+{% comment %} Model ends {% endcomment %}
         </form>
       </div>
     </div>

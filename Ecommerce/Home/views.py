@@ -8,10 +8,12 @@ from django.contrib.auth import authenticate , login ,logout
 
 from . models import Mens as mensboy
 
-from . models import Mens
+# from . models import Mens
 from . models import Womens as womensgirl
 from . models import Kids as kidschild
 from . models import Accessories as Accessories_productshai
+
+# from . models import Mens,Womens,Kids as AllProducts
 
 
 # Create your views here.
@@ -131,7 +133,7 @@ def Detail_mens(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\details1.html",params)
+    return render(request,"homepage\details_mens.html",params)
 
 
 def Detail_womens(request,id):
@@ -142,7 +144,7 @@ def Detail_womens(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\details1.html",params)
+    return render(request,"homepage\details_womens.html",params)
 
     
 
@@ -154,7 +156,7 @@ def Detail_kids(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\details1.html",params)
+    return render(request,"homepage\details_kids.html",params)
     
 
 def Detail_accessories(request,id):
@@ -165,7 +167,7 @@ def Detail_accessories(request,id):
     except:
         params = {"data":{},"error":"Product not found"}
 
-    return render(request,"homepage\details1.html",params)
+    return render(request,"homepage\details_accessories.html",params)
 
 
 
@@ -178,29 +180,32 @@ def Checkout(request):
     str = request.POST.get("cartJson")
     cart = json.loads(str)
     currentCart = cart
-    print(currentCart)
-    
-    
-    
-    titalPrice = 0
+
+
+    totalPrice = 0 
     for id in cart:
         temp= cart[id]
-        tempOb = mensboy.objects.all(id=id)
+        # tempOb0 = mensboy.objects.get(id=id)
+        tempOb = mensboy.objects.get(id=id)
+        print("this is temp 1",tempOb)
+        # tempOb2 = kidschild.objects.get(id=id)
+        # tempOb=tempOb0+tempOb1+tempOb2
+        
+
         price = tempOb.price
         temp["price"]=price
         temp["totalItemPrice"] = price * temp["value"]
         totalPrice = totalPrice + temp["totalItemPrice"]
-        currentCart[id] = temp
-        
-        params = {
-            
-            totalPrice : totalPrice,
-            date: currentCart
-        } 
-        print("this is cart") 
+        currentCart[id] = temp 
+    
+    params = {
+        "totalPrice" : totalPrice,
+        "data": currentCart
+    }
+    print("this is cart") 
   
 
-    return render(request,"homepage/checkout.html")
+    return render(request,"homepage/checkout.html",params)
 
 
 
