@@ -37,6 +37,8 @@ List
 
     <div class="row">
 	 {% for i in data  %}
+   {% if i.category == "Accessories" %}
+
       <div class="col-md-3 ">
         <div class="product-container">
           <!-- <div class="tag-sale">
@@ -74,6 +76,10 @@ List
           </div>
         </div>
       </div>
+         {%else%}
+{% comment %} <h1>siddhesh</h1> {% endcomment %}
+{% endif %}
+
    	 {% endfor %} 
 
 </section>
@@ -92,7 +98,7 @@ const add_to_cart =(id,name)=>{
 
 
 
-   id=id+300;
+   //id=id+150;
  
   if (cart) {
     if (cart[id]) {

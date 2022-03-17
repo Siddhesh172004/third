@@ -10,7 +10,7 @@ urlpatterns = [
     path('contact/',views.ContactUs),
     path('cartpage/',views.Cartpage),
     path('checkout/',views.Checkout),
-
+    path('submitcheckout/',views.submitcheckout),
     # Details modul starts
     path('mens/detail/<int:id>',views.Detail_mens),
     path('womens/detail/<int:id>',views.Detail_womens),

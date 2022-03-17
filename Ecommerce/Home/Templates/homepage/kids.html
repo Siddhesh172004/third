@@ -37,6 +37,8 @@ List
 
     <div class="row">
 	 {% for i in data  %}
+   {% if i.category == "Kids" %}
+
       <div class="col-md-3 ">
         <div class="product-container">
           <!-- <div class="tag-sale">
@@ -74,6 +76,10 @@ List
           </div>
         </div>
       </div>
+     {%else%}
+{% comment %} <h1>siddhesh</h1> {% endcomment %}
+{% endif %}
+
    	 {% endfor %} 
 
 </section>
@@ -88,7 +94,7 @@ const add_to_cart =(id,name)=>{
 
   var cart = JSON.parse(localStorage.getItem("cart"))
 
-  id=id+200;
+  //id=id+100;
  
   if (cart) {
     if (cart[id]) {

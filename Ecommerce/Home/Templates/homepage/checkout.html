@@ -36,18 +36,20 @@ List
      
       <div class="col-md-12 order-md-1">
         <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate>
+        <form action="/submitcheckout/" class="needs-validation" method="POST">
+                  {% csrf_token %}
+           <input type="hidden" name="jsonCart" value="{{data}}" id="jsonCartHidden">
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" name="f_name" required>
+              <input type="text" class="form-control" id="firstName" placeholder="" name="first_name" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="lastName">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" name="l_name" required>
+              <input type="text" class="form-control" id="lastName" placeholder="" name="last_name" required>
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -102,15 +104,14 @@ List
             <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="same-address">
             <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
           </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" name="isSaveInfo" class="custom-control-input" id="save-info">
-            <label class="custom-control-label" for="save-info">Save this information for next time</label>
-          </div>
+        
           <hr class="mb-4">
 
           <h4 class="mb-3">Payment</h4>
-
-         
+            <div class="custom-control custom-checkbox">
+            <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD" checked>
+            <label class="custom-control-label" for="COD">Cash on delievery (COD)</label>
+          </div>
           
          
           <hr class="mb-4">
@@ -164,7 +165,7 @@ List
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Order-Now</button>
         </div>
       </div>
     </div>

@@ -7,12 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login ,logout
 
 from . models import Mens as mensboy
-
-# from . models import Mens
-from . models import Womens as womensgirl
-from . models import Kids as kidschild
-from . models import Accessories as Accessories_productshai
-
+from . models import order as Orderdone
 # from . models import Mens,Womens,Kids as AllProducts
 
 
@@ -100,7 +95,7 @@ def Mens(request):
 
 
 def Womens(request):
-    Womens_products=womensgirl.objects.all()
+    Womens_products=mensboy.objects.all()
     params = {
         "data":Womens_products
     }
@@ -108,7 +103,7 @@ def Womens(request):
     
 
 def Kids(request):
-    Kids_products=kidschild.objects.all()
+    Kids_products=mensboy.objects.all()
     params = {
         "data":Kids_products
     }
@@ -116,7 +111,7 @@ def Kids(request):
 
 
 def Accessories(request):
-    Accessories_products=Accessories_productshai.objects.all()
+    Accessories_products=mensboy.objects.all()
     params = {
         "data":Accessories_products
     }
@@ -140,7 +135,7 @@ def Detail_womens(request,id):
     # name = request.GET.get("id")
 
     try:
-        params = {"data":womensgirl.objects.get(id=id),"error":"null"}
+        params = {"data":mensboy.objects.get(id=id),"error":"null"}
     except:
         params = {"data":{},"error":"Product not found"}
 
@@ -152,7 +147,7 @@ def Detail_kids(request,id):
     # name = request.GET.get("id")
 
     try:
-        params = {"data":kidschild.objects.get(id=id),"error":"null"}
+        params = {"data":mensboy.objects.get(id=id),"error":"null"}
     except:
         params = {"data":{},"error":"Product not found"}
 
@@ -163,7 +158,7 @@ def Detail_accessories(request,id):
     # name = request.GET.get("id")
 
     try:
-        params = {"data":Accessories_productshai.objects.get(id=id),"error":"null"}
+        params = {"data":mensboy.objects.get(id=id),"error":"null"}
     except:
         params = {"data":{},"error":"Product not found"}
 
@@ -181,13 +176,12 @@ def Checkout(request):
     cart = json.loads(str)
     currentCart = cart
 
-
+    
     totalPrice = 0 
     for id in cart:
         temp= cart[id]
         # tempOb0 = mensboy.objects.get(id=id)
-        tempOb = mensboy.objects.get(id=id)
-        print("this is temp 1",tempOb)
+        tempOb =mensboy.objects.get(id=id)
         # tempOb2 = kidschild.objects.get(id=id)
         # tempOb=tempOb0+tempOb1+tempOb2
         
@@ -208,6 +202,28 @@ def Checkout(request):
     return render(request,"homepage/checkout.html",params)
 
 
+def submitcheckout(request):
+    if(request.method=="POST"):
+        jsonCart= request.POST.get("jsonCart")
+        first_name= request.POST.get("first_name")
+        last_name= request.POST.get("last_name")
+        email= request.POST.get("email")
+        address= request.POST.get("address")
+        state= request.POST.get("state")
+        zip= request.POST.get("zip")
+        isSameBillingAddress= request.POST.get("isSameBillingAddress")
+        if(isSameBillingAddress=="on"):
+            isSameBillingAddress = True
+        else:
+            isSameBillingAddress = False
+        newOrder = Orderdone(jsonCart=jsonCart,email=email, first_name=first_name ,last_name=last_name,state=state,zip=zip,address=address,isSameBillingAddress=isSameBillingAddress)
+        newOrder.save()
+        return render(request,"homepage/submitcheckout.html")
+    else:
+        return HttpResponse("You are on a wrong page. please <a href='/course/list'>Click here</a> to add items")
+
+    return HttpResponse("Thank you")
+    # return render(request,"course\contactus.html")
 
 
 
