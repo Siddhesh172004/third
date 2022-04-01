@@ -107,9 +107,9 @@ List
         
           <hr class="mb-4">
 
-          <h4 class="mb-3">Payment</h4>
+          <h4 class="mb-3">Payment Options</h4>
             <div class="custom-control custom-checkbox">
-            <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD" checked>
+            <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD">
             <label class="custom-control-label" for="COD">Cash on delievery (COD)</label>
           </div>
           <br>
@@ -119,9 +119,10 @@ List
               <label class="custom-control-label" for="COD">UPI Scanner</label>
           </div> {% endcomment %}
                    <!-- Button trigger modal -->
-                   <h4 class="mb-3">UPI Scanner</h4>
-<button type="button" class="btn btn-secondary btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal12">
-
+                   {% comment %} <h4 class="mb-3">UPI Scanner</h4> {% endcomment %}
+           
+<button type="button"  class="btn btn-white btn-sm btn-block p-0" data-bs-toggle="modal" data-bs-target="#exampleModal12">
+  <input name="isSameBillingAddress" type="checkbox" class="custom-control-input ml-0" id="COD">
 
   UPI
 </button>
