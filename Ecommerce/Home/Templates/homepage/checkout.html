@@ -99,7 +99,7 @@ List
               </div>
             </div>
           </div>
-          <hr class="mb-4">
+          <hr class="mb-4"> 
           <div class="custom-control custom-checkbox">
             <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="same-address">
             <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
@@ -112,7 +112,19 @@ List
             <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD" checked>
             <label class="custom-control-label" for="COD">Cash on delievery (COD)</label>
           </div>
-          
+          <br>
+          {% comment %} <h4 class="mb-3">QR scanner</h4>
+              <div class="custom-control custom-checkbox">
+              <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD" checked>
+              <label class="custom-control-label" for="COD">UPI Scanner</label>
+          </div> {% endcomment %}
+                   <!-- Button trigger modal -->
+                   <h4 class="mb-3">UPI Scanner</h4>
+<button type="button" class="btn btn-secondary btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal12">
+
+
+  UPI
+</button>
          
           <hr class="mb-4">
           <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
@@ -184,6 +196,37 @@ List
       </ul>
     </footer>
   </div>
+
+
+
+
+
+
+{% comment %} UPI MODEL {% endcomment %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal12" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Scan this QR code</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <div class="row h-50 w-50 m-auto ">
+          <img src="/media/scannerqr.jpeg " class="border p-3 img-fluid ">
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Done the payment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% comment %} Model ends {% endcomment %}
+{% comment %} UPI MODEL ends {% endcomment %}
+
 
   {% endblock body %}
     

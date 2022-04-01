@@ -70,7 +70,7 @@ span.custom-ar{
       <input type="checkbox" id="show-menu">
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
       <div class="content">
-      <div class="logo"><a href="#">NikeXPuma</a></div>
+      <div class="logo"><a href="/">NikeXPuma</a></div>
         <ul class="links">
           <li><a href="/">Home</a></li>
           <li><a href="/mens">Mens</a></li>
@@ -197,7 +197,7 @@ Object.keys(cart).map((item) => {
       htmlStr =
         htmlStr +
         " " +
-        `<li class="list-group-item d-flex justify-content-between">${cart[item].name} <span class="d-flex"><span style="cursor:pointer" onclick="addItem(${item})" class="custom-ar">+</span><span class="badge bg-primary">${cart[item].value}</span><span style="cursor:pointer" onclick="removeItem(${item})" class="custom-ar">-</span></span></li>`;
+        `<li class="list-group-item d-flex justify-content-between">${cart[item].name} <span class="d-flex"><span style="cursor:pointer" onclick="addItem(${item})" class="custom-ar my-auto">+</span><span class="badge bg-primary m-auto">${cart[item].value}</span><span style="cursor:pointer" onclick="removeItem(${item})" class="custom-ar my-auto">-</span></span></li>`;
 
       // for reference
       // item = 4
