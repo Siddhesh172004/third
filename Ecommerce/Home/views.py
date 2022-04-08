@@ -1,5 +1,6 @@
 from urllib import request
 import json
+from django.forms import TypedMultipleChoiceField
 from django.shortcuts import render,redirect
 from django.http.response import HttpResponse
 from django.contrib import messages
@@ -7,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate , login ,logout
 
 from . models import Mens as mensboy
+from . models import detailsqr as detailsqrhai
 from . models import order as Orderdone
 # from . models import Mens,Womens,Kids as AllProducts
 
@@ -216,8 +218,25 @@ def submitcheckout(request):
             isSameBillingAddress = True
         else:
             isSameBillingAddress = False
-        newOrder = Orderdone(jsonCart=jsonCart,email=email, first_name=first_name ,last_name=last_name,state=state,zip=zip,address=address,isSameBillingAddress=isSameBillingAddress)
+        
+        CODHai= request.POST.get("CODHai")
+        if(CODHai=="on"):
+            CODHai = True
+        else:
+            CODHai = False
+        
+        UPIHai= request.POST.get("UPIHai")
+        if(UPIHai=="on"):
+            UPIHai = True
+        else:
+            UPIHai = False
+        
+
+
+        newOrder = Orderdone(jsonCart=jsonCart,email=email, first_name=first_name ,last_name=last_name,state=state,zip=zip,CODHai=CODHai,UPIHai=UPIHai,address=address,isSameBillingAddress=isSameBillingAddress)
         newOrder.save()
+
+      
         return render(request,"homepage/submitcheckout.html")
     else:
         return HttpResponse("You are on a wrong page. please <a href='/course/list'>Click here</a> to add items")
@@ -233,6 +252,46 @@ def ContactUs(request):
 
 
 
+# QR code details submitted section starts
+def Qrdetails(request):
+    return render(request,"homepage/Qrcodepaymentdetails.html")
+
+
+
+
+def Qrdetailsubmitted(request):
+    Name = request.POST.get("Namehai")
+    TransactionID = request.POST.get("TransactionID")
+    UPINumber = request.POST.get("UPINumber")
+    UPIIDHAi = request.POST.get("UPIID")
+    Filehai =request.FILES['PaymentScreenshot']
+    newContact  =  detailsqrhai(Name=Name,TransactionID=TransactionID,UPINumber=UPINumber,UPIIDHAi=UPIIDHAi,Filehai=Filehai)
+    newContact.save()
+
+    return HttpResponse("<h3>Details Submitted please <a href='/'>Click here</a> to go to Homepage keep shoping</h3>")
+
+
+# QR code details submitted section Ends
 
 
     
+
+
+
+
+
+# Ttemp code
+def contactusboi(request):
+    return render(request,"homepage/contactus.html")
+
+def Contactsubmit(request):
+    Name = request.POST.get("Namehai")
+    TransactionID = request.POST.get("TransactionID")
+    UPINumber = request.POST.get("UPINumber")
+    UPIIDHAi = request.POST.get("UPIID")
+    Filehai =request.POST.get("PaymentScreenshot")
+    newContact  =  detailsqrhai(Name=Name,TransactionID=TransactionID,UPINumber=UPINumber,UPIIDHAi=UPIIDHAi,Filehai=Filehai)
+    newContact.save()
+    return HttpResponse("<h1>thanks for the response</h1><a href='/shop'><button style='background-color: #0275d8; color:white; /* Green */ border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;'>Click here to shop</button></a>")
+    
+# Ttemp code

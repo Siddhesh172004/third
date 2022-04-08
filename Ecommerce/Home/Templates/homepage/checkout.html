@@ -109,7 +109,8 @@ List
 
           <h4 class="mb-3">Payment Options</h4>
             <div class="custom-control custom-checkbox">
-            <input name="isSameBillingAddress" type="checkbox" class="custom-control-input" id="COD">
+            <button type="button"  class="btn btn-white btn-sm btn-block p-0" data-bs-toggle="modal" data-bs-target="#exampleModal11">
+            <input name="CODHai" type="checkbox" class="custom-control-input" id="COD"> </button>
             <label class="custom-control-label" for="COD">Cash on delievery (COD)</label>
           </div>
           <br>
@@ -122,7 +123,7 @@ List
                    {% comment %} <h4 class="mb-3">UPI Scanner</h4> {% endcomment %}
            
 <button type="button"  class="btn btn-white btn-sm btn-block p-0" data-bs-toggle="modal" data-bs-target="#exampleModal12">
-  <input name="isSameBillingAddress" type="checkbox" class="custom-control-input ml-0" id="COD">
+  <input name="UPIHai" type="checkbox" class="custom-control-input ml-0" id="COD">
 
   UPI
 </button>
@@ -130,11 +131,12 @@ List
           <hr class="mb-4">
           <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button> -->
           <!-- Button trigger modal -->
+{% comment %} 
 <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal11">
 
 
     Continue to checkout
-  </button>
+  </button> {% endcomment %}
   
 <!-- Modal -->
 
@@ -183,24 +185,9 @@ List
       </div>
     </div>
   </div>
-{% comment %} Model ends {% endcomment %}
-        </form>
-      </div>
-    </div>
-
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; 2017-2018 Company Name</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
-        <li class="list-inline-item"><a href="#">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
-      </ul>
-    </footer>
-  </div>
 
 
 
-  
 
 
 
@@ -218,16 +205,60 @@ List
          <div class="row h-50 w-50 m-auto ">
           <img src="/media/scannerqr.jpeg " class="border p-3 img-fluid ">
          </div>
+         <br>
+          <ul class="list-group mb-3  ">
+
+                  {% for key,value in data.items %}
+
+                  <li class="list-group-item d-flex justify-content-between lh-sm ">
+                    <div>
+                      <h6 class="my-0">{{value.name}}</h6>
+                      <small class="text-muted"> <span class="badge bg-secondary mx-2">Qty : {{value.value}} </span><span class="badge bg-secondary mx-2">Price : {{value.price}} INR</span> </small>
+                    </div>
+                    <span class="text-muted">{{value.totalItemPrice}} INR</span>
+                  </li>
+
+                    
+                  {% endfor %}
+
+        
+
+
+          
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (INR)</span>
+            <strong>{{totalPrice}}</strong>
+          </li>
+        </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Done the payment</button>
+          <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Click here after you paid">Done the payment</button>
         </div>
       </div>
     </div>
   </div>
 {% comment %} Model ends {% endcomment %}
 {% comment %} UPI MODEL ends {% endcomment %}
+
+{% comment %} Model ends {% endcomment %}
+        </form>
+      </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017-2018 Company Name</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+
+
+
+
 
 
   {% endblock body %}

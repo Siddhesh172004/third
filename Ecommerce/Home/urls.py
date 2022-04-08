@@ -24,7 +24,15 @@ urlpatterns = [
     path('login/',views.Login),
     path('signindo/',views.Signindo),
     path('logindo/',views.Logindo),
+
+    path('Qrdetails/',views.Qrdetails),
+    path('Qrdetailsubmitted/',views.Qrdetailsubmitted),
+
+
+    path('contactus/',views.contactusboi),
+    path('contactsubmitted/',views.Contactsubmit)
+
+
     
   
 ]
-

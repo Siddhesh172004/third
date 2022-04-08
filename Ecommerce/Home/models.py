@@ -28,6 +28,21 @@ class order(models.Model):
     last_name =  models.CharField(max_length=50)
     address =  models.CharField(max_length=200)
     zip = models.IntegerField()
+    CODHai = models.BooleanField(default=True)
+    UPIHai = models.BooleanField(default=False)
     order_date = models.DateField(default=timezone.now)
     def __str__(self):
         return self.email
+    
+    
+
+class detailsqr(models.Model):
+    qr_id = models.AutoField(primary_key=True)
+    Name =  models.CharField(max_length=50)
+    TransactionID = models.IntegerField()
+    UPINumber = models.IntegerField()
+    UPIIDHAi =  models.CharField(max_length=50,default="none")
+    Filehai = models.ImageField(upload_to="Home\qrdetails\images",default="")
+    pub_date = models.DateField(default=timezone.now)
+    def __str__(self):
+        return self.Name
