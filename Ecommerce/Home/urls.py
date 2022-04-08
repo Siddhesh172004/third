@@ -30,9 +30,10 @@ urlpatterns = [
 
 
     path('contactus/',views.contactusboi),
-    path('contactsubmitted/',views.Contactsubmit)
+    path('contactsubmitted/',views.Contactsubmit),
 
 
-    
+    # logout 
+    path('logout/',views.logoutkaro),
   
 ]

@@ -79,7 +79,20 @@ span.custom-ar{
           <li><a href="/accessories">Accessories</a></li>
           <li><button class="btn btn-dark cart__btn" onclick="putDataInCartPopup()" data-bs-toggle="modal" data-bs-target="#exampleModal">Cart(<span id="cartId"></span>)</button></li>
    		 
+          {% if user.is_authenticated  %}
+          {{request.user.}} 
 
+   <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         harsh
+       </a>
+       <ul class="dropdown-menu drop-custom" aria-labelledby="navbarDropdown">
+         <li><a class="dropdown-item" href="/logout/">logout</a></li>
+         
+       </ul>
+     </li>
+     {% comment %} if user has not login then show this started {% endcomment %}
+     {% else %}  
        <li>
             <a href="#" class="desktop-link fas fa-user"></a>
             <input type="checkbox" id="show-services">
@@ -90,6 +103,10 @@ span.custom-ar{
            
             </ul>
           </li>
+          {% endif %}
+
+     {% comment %} if user has not login then show this ended {% endcomment %}
+
          
         </ul>
       </div>

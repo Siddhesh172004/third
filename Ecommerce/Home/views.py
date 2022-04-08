@@ -82,6 +82,10 @@ def Logindo(request):
         # messages.add_message(request, messages.ERROR, 'Please Login.')
         return redirect("/login/")
     
+def logoutkaro(request):
+    logout(request)
+    # messages.add_message(request, messages.SUCCESS, 'Logout successful')
+    return redirect("/")
 
 
 

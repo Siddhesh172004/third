@@ -19,7 +19,7 @@ List
 {% endblock css %}
 
 {% block body %}
-
+{% if user.is_authenticated %}
 
 <div class="container">
     {% comment %} <div class="py-5 text-center">
@@ -256,10 +256,13 @@ List
     </footer>
   </div>
 
+  
 
-
-
-
+  {% else %}
+  <div class="pt-5">
+   <center class="custt pt-5 " >You Need to login for Checkout <a class="text-primary" href="/login/">login</a> </center>
+  </div>
+   {% endif %}
 
   {% endblock body %}
-    
+ 
